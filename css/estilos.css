@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #63ccc7;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.cabecera {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: 8px solid rgb(57, 12, 219);
+    color: rgb(57, 12, 219);
+    font-size: 40px;
+    padding: 10px 20px;
+    background-color: aqua;
+    border-radius: 10px;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+#reloj {
+    color: green;
+    font-size: 40px;
+}
+
+
+.rejilla {
+    margin: 40px auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: all 1000ms ease-in-out;
+}
+
+.rejilla.start {
+    margin: 0  auto;
+}
+
+.rejilla.out {
+    margin: -1000px auto;
+}
+
+#game-over {
+    opacity: 0;
+    margin: 40px auto;
+    font-size: 150px;
+    color: rgb(246, 255, 246);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -5;
+    text-align: center;
+    transition: 2s all ease-in-out;
+}
+
+.tarjeta {
+    margin: 10px;
+    height: 170px;
+    width: 170px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 400ms linear;
+}
+
+.anverso {
+    margin: 10px;
+    height: 170px;
+    width: 170px;
+    background-image: url("../img/LogoGemaStarlight.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.reverso {
+    margin: 10px;
+    height: 170px;
+    width: 170px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.seleccionado {
+    transform: rotateY(180deg);
+}
+
+.eliminado .anverso {
+    background-image: none !important;
+}
+
+#winner {
+    font-size: 160px;
+    color: rgb(250, 244, 250);
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    transition: all 500ms ease-in-out;
+}
+
+#winner.open {
+    top: 50%;
+}

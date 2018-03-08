@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e2abab;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.cabecera {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    border: 8px solid orangered;
+    color: green;
+    font-size: 40px;
+    padding: 10px 20px;
+    background-color: aqua;
+    border-radius: 10px;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+#reloj {
+    color: green;
+    font-size: 40px;
+}
+
+.rejilla {
+    margin: 40px auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta {
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 400ms linear;
+}
+
+.anverso {
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+    background-image: url("../img/pokeball.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.reverso {
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.seleccionado {
+    transform: rotateY(180deg);
+}
+
+.eliminado .anverso {
+    background-image: none !important;
+}
+
+#winner {
+    font-size: 160px;
+    color: rgb(250, 244, 250);
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    transition: all 500ms ease-in-out;
+}
+
+#winner.open {
+    top: 50%;
+}
